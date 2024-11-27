@@ -79,33 +79,64 @@ body {
     left:0px;
     height:400px;
     width:600px;
-    background-color:bisque;
+    /* background-color:bisque; */
     display:flex;
     justify-content: space-evenly;
+    border:1px solid var(--blackcover);
+    border-radius:20px;
     
 
 }
 .main-image{
   height:400px;
-  width:290px;
-  background-color:#333;
+  width:300px;
+  background-color: rgba(191, 184, 184, 0.1456);
+  border-radius:0px 20px 20px 0px;
+}
+.main-image-2{
+  height:400px;
+  width:300px;
+  background-color: rgba(191, 184, 184, 0.1456);
+  background-image:url("../assest/burger2.png");
+  background-size: cover;
+  border-radius:20px 0px 0px 20px;
+  opacity: 0.8;
 }
 .select-yourself .btn-main{
   position:relative;
-  top:200px;
+  top:30px;
   left:60px;
+  background-color:var(--yellow);
 }
+ 
 
+hover::button{
+  box-shadow:-3px -2px 5px brown 
+}
 .select-yourself .main-image p{
   position:relative;
-  top:100px;
+  top:50px;
   left:40px;
   font-size:50px;
   color:white;
+  font-weight: 900;
 }
 
 .select-yourself .main-image span{
-  color:Yellow;
+  color:red;
+  position:relative;
+  left:50px;
+  font-weight: 900;
+}
+.arrow{
+  font-size:130px;
+  color:white;
+  position:relative;
+  top:50px;
+  left:70px;
+}
+#image{
+  background-size: cover;
 }
   
   /* Button Styles */
