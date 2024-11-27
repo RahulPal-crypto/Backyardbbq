@@ -88,4 +88,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.getElementById('close-success-create-popup').addEventListener('click', () => hidePopup('success-create-popup'));
   });
+
+
+
+  // location
+  
+
+  // Elements
+const adminBtn = document.getElementById('admin-btn');
+const locationPopup = document.getElementById('location-popup');
+const allowLocationBtn = document.getElementById('allow-location-btn');
+const denyLocationBtn = document.getElementById('deny-location-btn');
+
+// Event Listeners
+adminBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent navigation
+  locationPopup.style.display = 'flex'; // Show the location pop-up
+});
+
+// Allow Location
+allowLocationBtn.addEventListener('click', () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        alert(`Your Location: Latitude ${latitude}, Longitude ${longitude}`);
+        locationPopup.style.display = 'none'; // Close the pop-up
+      },
+      (error) => {
+        alert('Unable to fetch location. Please try again.');
+        locationPopup.style.display = 'none'; // Close the pop-up
+      }
+    );
+  } else {
+    alert('Geolocation is not supported by your browser.');
+    locationPopup.style.display = 'none'; // Close the pop-up
+  }
+});
+
+// Deny Location
+denyLocationBtn.addEventListener('click', () => {
+  alert('Location access denied.');
+  locationPopup.style.display = 'none'; // Close the pop-up
+})
   
